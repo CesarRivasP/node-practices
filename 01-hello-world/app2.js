@@ -3,3 +3,7 @@ const greet = (name) => {
 
   return message;
 }
+
+let greeting = greet('Cesar');
+
+console.log(greeting);
