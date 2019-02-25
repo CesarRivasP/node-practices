@@ -1,3 +1,6 @@
+//var aun se utiliza, pero let brinda mas funcionalidades
+//y caracteristicas de seguridad para nuestras apps
+
 var name = 'Cesar';
 
 if(true){
