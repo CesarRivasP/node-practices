@@ -1,36 +1,36 @@
-// function sumar(a,b) {
-//   return a + b;
-// }
-//
-// console.log(sumar(10,20));
+function sumar(a,b) {
+  return a + b;
+}
+
+console.log(sumar(10,20));
 
 // -------------------------------------- //
 //Una arrow function basicamente puede reemplazar a cualquier funcion normal
 
 //Declaracion normal de una arrow function
-// let sumar = (a,b) => {
-//   return a + b;
-// }
+let sumar = (a,b) => {
+  return a + b;
+}
 
 // Si todo el cuerpo de la funcion se puede escribir en una sola linea
-// let sumar = (a, b) => a + b;
-//
-// console.log(sumar(10,20));
+let sumar = (a, b) => a + b;
+
+console.log(sumar(10,20));
 
 // -------------------------------------- //
 //Exercise
-// function saludar() {
-//   return 'Hello world'
-// }
+function saludar() {
+  return 'Hello world'
+}
 
 //traduccion
-// let saludar = (name) => `Hello ${name}`;
-//
-// console.log(saludar('Cesar'));
+let saludar = (name) => `Hello ${name}`;
+
+console.log(saludar('Cesar'));
 // ~
-// let saludar = name => {
-//   return `Hello ${name}`
-// }
+let saludar = name => {
+  return `Hello ${name}`
+}
 
 // -------------------------------------- //
 
