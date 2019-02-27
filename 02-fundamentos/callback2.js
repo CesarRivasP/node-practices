@@ -9,61 +9,61 @@ let salaries = [
   { id: 2, salarie: 2000 }
 ];
 
-// //Obtener un empleado por el id
-// let getEmployee = (id, callback) => {
-//   //Para buscar en un array. Va a barrer el arreglo, pero por cada
-//   //iteracion se va a obtener un usuario
-//   let employeeDB = employees.find((employee) => employee.id === id);
-//
-//   // console.log(employeeDB);
-//
-//   if( !employeeDB ) { //si no existe
-//     callback(`No existe un empleado con el id: ${id}`);
-//   }
-//   else {
-//     callback(null, employeeDB); //null porque no hay ningun error
-//   }
-// };
-//
-// let getSalaries = (id, callback) => {
-//
-//   let employeeDB = employees.find((employee) => employee.id === id);
-//   // let employeeDB = employeeDataBase(employees);
-//
-//   let employeeSalaries = salaries.find((salarie) => salarie.id == id );
-//   // console.log(employeeSalaries);
-//   if (!employeeSalaries){
-//     return console.log(`No hay salarios disponibles con ese id ${id}`);
-//   }
-//   else {
-//     callback(null, employeeDB, employeeSalaries)
-//   }
-//
-// }
-//
-// getEmployee(1, (err, employee) => {
-//
-//   if ( err ) {
-//     return console.log(err);
-//   }
-//
-//   console.log(employee);
-//
-// });
-//
-// getSalaries(1, (err, employee, salarie) => {
-//
-//   let salariesEmployees = employee;
-//
-//   if( salarie.id === salariesEmployees.id) {
-//     // return console.log(`El salario  del empleado ${salariesEmployees.name} es equivalente a ${salarie.salarieEm}`);
-//     return console.log(salariesEmployees.name, salarie.salarieEm);
-//   }
-// });
+//Obtener un empleado por el id
+let getEmployee = (id, callback) => {
+  //Para buscar en un array. Va a barrer el arreglo, pero por cada
+  //iteracion se va a obtener un usuario
+  let employeeDB = employees.find((employee) => employee.id === id);
 
-// const employeeDataBase = (employees) => {
-//   return employees.find((employee) => employee.id === id);
-// }
+  // console.log(employeeDB);
+
+  if( !employeeDB ) { //si no existe
+    callback(`No existe un empleado con el id: ${id}`);
+  }
+  else {
+    callback(null, employeeDB); //null porque no hay ningun error
+  }
+};
+
+let getSalaries = (id, callback) => {
+
+  let employeeDB = employees.find((employee) => employee.id === id);
+  // let employeeDB = employeeDataBase(employees);
+
+  let employeeSalaries = salaries.find((salarie) => salarie.id == id );
+  // console.log(employeeSalaries);
+  if (!employeeSalaries){
+    return console.log(`No hay salarios disponibles con ese id ${id}`);
+  }
+  else {
+    callback(null, employeeDB, employeeSalaries)
+  }
+
+}
+
+getEmployee(1, (err, employee) => {
+
+  if ( err ) {
+    return console.log(err);
+  }
+
+  console.log(employee);
+
+});
+
+getSalaries(1, (err, employee, salarie) => {
+
+  let salariesEmployees = employee;
+
+  if( salarie.id === salariesEmployees.id) {
+    // return console.log(`El salario  del empleado ${salariesEmployees.name} es equivalente a ${salarie.salarieEm}`);
+    return console.log(salariesEmployees.name, salarie.salarieEm);
+  }
+});
+
+const employeeDataBase = (employees) => {
+  return employees.find((employee) => employee.id === id);
+}
 
 // --------------------------------------------------------------------- //
 
