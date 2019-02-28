@@ -1,39 +1,39 @@
 //Callbacks
 // Un Callbacks es una funcion que se ejecuta cuando algo sucede o despues de algo
 //Esta funcion es un Callback
-// setTimeout(() => {
-//   console.log('hello world');
-// }, 3000);
+setTimeout(() => {
+  console.log('hello world');
+}, 3000);
 
 // -------------------------------------------------------------------- //
 
-// let getUserById = (id, callback) => {
-//
-//   let user = {  //emulando una solicitud a la base de datos
-//     name: 'Cesar',
-//     id, //id: id
-//   }
-//
-//   if( id === 20) {  //simuando que el id 20 no existe
-//     callback(`El usuario con id: ${id} no existe en la base de datos`)
-//   }
-//   else {
-//     callback(user);
-//   }
-//   //before
-//   // callback(user); //ejecucion del Callback queriendo que retorne al usuario de base de datos
-// }
-//
-// //Usuario id, que se quiere invocar cuando ya se tenga el usuario
-// getUserById(1, (err, user /*Especificacion del callback*/)  => {
-//
-//   if(err){
-//     return console.log(err);
-//     //Se agrega el return para que cuando haya un error muestre el log y no se siga ejecutando el programa
-//   }
-//
-//   console.log('Usuario de base de datos', user);  //No es una concatenacion, es poner otro argumento
-// });
+let getUserById = (id, callback) => {
+
+  let user = {  //emulando una solicitud a la base de datos
+    name: 'Cesar',
+    id, //id: id
+  }
+
+  if( id === 20) {  //simuando que el id 20 no existe
+    callback(`El usuario con id: ${id} no existe en la base de datos`)
+  }
+  else {
+    callback(user);
+  }
+  //before
+  // callback(user); //ejecucion del Callback queriendo que retorne al usuario de base de datos
+}
+
+//Usuario id, que se quiere invocar cuando ya se tenga el usuario
+getUserById(1, (err, user /*Especificacion del callback*/)  => {
+
+  if(err){
+    return console.log(err);
+    //Se agrega el return para que cuando haya un error muestre el log y no se siga ejecutando el programa
+  }
+
+  console.log('Usuario de base de datos', user);  //No es una concatenacion, es poner otro argumento
+});
 
 /*
 - Normalmente este tipo de funciones que van a la base de datos y traen data, y por ello estas instrucciones al
