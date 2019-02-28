@@ -73,5 +73,4 @@ let getSalaries = (employee) => {
       //porque no son un return
     }
   })
-
 }
