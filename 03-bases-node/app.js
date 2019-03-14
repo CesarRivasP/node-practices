@@ -24,13 +24,13 @@ const { createFile } = require('./multiply/multiply');
 
 //after
 // console.log(process.argv); // objeto global
-
+//argv = argumentos
 let argv = process.argv;
 //Al agregar el argumento en el argv este quedaria en el 3 puesto,
 //segundo del array, puesto que antes esta el path de node y el PATH
 //del archivo a ejecutar
 let param = argv[2];
-
+// let base = param.split('=') -> se quiere separar por el signo de '=' -> ['--base', '5']
 let base = param.split('=')[1];
 
 // console.log(base);
