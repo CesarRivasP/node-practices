@@ -2,7 +2,7 @@ const fs = require('fs');
 
 // La otra forma de aplicar el module
 // module.exports.createFile = (base) => {
-let createFile = (base) => {
+let createFile = (base, limit = 10) => {
 
   return new Promise((resolve,reject) => {
 
@@ -13,9 +13,9 @@ let createFile = (base) => {
 
     let data= '';
 
-    for(let i = 1; i <= 10; i++){
+    for(let i = 1; i <= limit; i++){
       // console.log(`${base} * ${i} = ${base * i}`);
-      data += `${base} * ${i} = ${base * i} \n`;
+      data += `${base} * ${i} = ${base * i}, \n`;
     }
 
     // fs.writeFile(nombreArchivo o PATH, data[, options como utf-8 ...], callback)
@@ -28,8 +28,17 @@ let createFile = (base) => {
   })
 }
 
+let listarTable = (base, limit) => {
+
+  for(let i = 1; i <= limit; i++){
+    // console.log(`${base} * ${i} = ${base * i}`);
+    console.log(`${base} * ${i} = ${base * i}`);
+  }
+}
+
 // Esta es una forma de aplicar el module
 module.exports = {
   //Esta es mejor cuando se tienen multiples funciones
-  createFile   // createFile: createFile
+  createFile,   // createFile: createFile
+  listarTable
 }
