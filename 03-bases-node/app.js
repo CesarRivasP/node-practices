@@ -34,6 +34,7 @@ const argv = require('yargs')  //after
 // argv.argv -> argv del objeto donde esta el require, y dentro de ese objeto esta el otro argv
 //Como no se quiere manejar asi:
 const argv = require('./config/yargs').argv;
+var colors = require('colors/safe');
 
 // const multiply = require('./multiply/multiply'); forma normal
 const { createFile, listarTable } = require('./multiply/multiply');
@@ -68,7 +69,7 @@ switch(comando) {
   case 'crear':
     console.log('crear');
     createFile(argv.base, argv.limite)
-      .then((file) => console.log(`Archivo creado ${file}`))
+      .then((file) => console.log(colors.yellow('Archivo creado:'), colors.green(file)))
       .catch((err) => console.log(err));
     break;
   default:
