@@ -1,4 +1,5 @@
 const fs = require('fs');
+const colors = require('colors');
 
 // La otra forma de aplicar el module
 // module.exports.createFile = (base) => {
@@ -29,7 +30,9 @@ let createFile = (base, limit = 10) => {
 }
 
 let listarTable = (base, limit) => {
-
+  console.log('===================================='.grey);
+  console.log(`==== Tabla de Multiplicar del ${base} ====`.green);
+  console.log('===================================='.grey);
   for(let i = 1; i <= limit; i++){
     // console.log(`${base} * ${i} = ${base * i}`);
     console.log(`${base} * ${i} = ${base * i}`);
