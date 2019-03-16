@@ -1,5 +1,6 @@
 // console.log(module);
 
+/* Optimizacion de yargs
 // const argv = require('yargs').argv;  //test
 const argv = require('yargs')  //after
                 .command('crear', 'Crea una nueva tabla de multiplicar',
@@ -27,7 +28,12 @@ const argv = require('yargs')  //after
                   }
                 )
                 .help() //imprime en consola lo que hace el comando, opciones posibles
-                .argv;
+                .argv; */
+// const argv = require('./config/yargs'); // Despues de la optimizacion
+//Para manejar el argv como se estaba haciendo antes:
+// argv.argv -> argv del objeto donde esta el require, y dentro de ese objeto esta el otro argv
+//Como no se quiere manejar asi:
+const argv = require('./config/yargs').argv;
 
 // const multiply = require('./multiply/multiply'); forma normal
 const { createFile, listarTable } = require('./multiply/multiply');
@@ -50,16 +56,14 @@ const { createFile, listarTable } = require('./multiply/multiply');
 //en el objeto
 // console.log(argv.base);
 // console.log('Limite', argv.limite);
-console.log(argv);
+// console.log(argv);
 
 let comando = argv._[0];
 
 switch(comando) {
   case 'listar':
     console.log('listar');
-    listarTable(argv.base, argv.limite)
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err))
+    listarTable(argv.base, argv.limite);
     break;
   case 'crear':
     console.log('crear');
