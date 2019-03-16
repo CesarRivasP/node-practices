@@ -9,6 +9,7 @@
   "author": "Cesar Rivas",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.3.3",
     "yargs": "^13.2.1"
   },
   "devDependencies": {}
