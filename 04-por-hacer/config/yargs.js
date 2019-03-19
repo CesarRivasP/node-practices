@@ -1,8 +1,8 @@
 const options = {
-  descripccion: {
+  descripcion: {
     demand: true,
     alias: 'd',
-    desc: 'Descripccion de la tarea por hacer'
+    desc: 'descripcion de la tarea por hacer'
   },
   completado: {
     default: true,
