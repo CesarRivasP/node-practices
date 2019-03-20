@@ -56,11 +56,37 @@ const getListing = () => {
   return todoList;
 }
 
+// Completado siempre debe venir en true
+const updateListing = (descripcion, completado = true) => {
+  loadDB();
+
+  // Esta variable va a ser igual a la posicion index del elemento que coincida con la descripcion dentro del array
+  let index = todoList.findIndex((task) => {
+    // console.log(task.descripcion);
+    return task.descripcion === descripcion
+    // Debe retornar el index (posicion) de una tarea si la descripcion de la tarea coincide, sino coincide retorna un -1
+    // que indica que no lo encontro
+  })
+  // console.log(index);
+  if (index >= 0){
+    todoList[index].completado = completado;
+    saveDB();
+    return true;  //para establecer que la tarea se hizo correctamente
+  }
+  else {
+    return false;
+  }
+}
+
 module.exports = {
   create,
-  getListing
+  getListing,
+  updateListing
 }
 
 //Es necesario volver persistente la informacion que se esta almacenando, para que prevalezca aun despues
 // ejecutar el programa. Para hacerlo persistente
 // JSON.stringify convierte un objeto a un json valido
+// findIndex recibe un callback, y va a hacer un ciclo interno por cada uno de los elementos, y se puede obtener cada uno de los
+// elementos en ese ciclo con la palabra clave establecida 'task (en este caso)'
+//
