@@ -26,6 +26,11 @@ switch (command) {
     console.log('Actualiza el estado completado de una tarea');
     console.log(update);
     break;
+  case 'borrar':
+    let erased = todo.deleteTask(argv.descripcion)
+    console.log('Borra una tarea de la base de datos');
+    console.log(erased);
+    break;
   default:
     console.log('Comando no reconocido');
     break;
