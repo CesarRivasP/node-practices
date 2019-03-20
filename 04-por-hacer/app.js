@@ -10,7 +10,7 @@ switch (command) {
     console.log(task);
     break;
   case 'listar':
-    let listado = todo.getListing();
+    let listing = todo.getListing();
 
     for ( let task of listing ) {
       console.log('=========== Por hacer ==========='.green);
