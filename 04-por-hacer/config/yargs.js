@@ -1,9 +1,12 @@
-const options = {
+const descripcion = {
   descripcion: {
     demand: true,
     alias: 'd',
     desc: 'descripcion de la tarea por hacer'
-  },
+  }
+}
+
+const completado = {
   completado: {
     default: true,
     alias: 'c',
@@ -12,21 +15,15 @@ const options = {
 }
 
 const argv = require('yargs')
-  .command('crear', 'Crear un elemento por hacer', options)
-  .command('listar', 'Despliega la lista de tareas por hacer', {
-    descripcion: {
-      demand: false,
-      alias: 'd',
-      desc: 'descripcion de la tarea por hacer'
-    }
+  .command('crear', 'Crear un elemento por hacer', {
+    descripcion
   })
-  .command('actualizar', 'Actualiza el estado completado de una tarea', options)
+  .command('actualizar', 'Actualiza el estado completado de una tarea', {
+    descripcion,
+    completado
+  })
   .command('borrar', 'Borra una tarea por hacer', {
-    descripcion: {
-      demand: true,
-      alias: 'd',
-      desc: 'descripcion de la tarea por hacer'
-    }
+    descripcion
   })
   .help()
   .argv;
