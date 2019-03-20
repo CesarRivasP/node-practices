@@ -21,6 +21,13 @@ const argv = require('yargs')
     }
   })
   .command('actualizar', 'Actualiza el estado completado de una tarea', options)
+  .command('borrar', 'Borra una tarea por hacer', {
+    descripcion: {
+      demand: true,
+      alias: 'd',
+      desc: 'descripcion de la tarea por hacer'
+    }
+  })
   .help()
   .argv;
 
