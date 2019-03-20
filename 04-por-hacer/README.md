@@ -1,4 +1,4 @@
-## Aplicacion de comandos
+## Aplicación de comandos
 
 Este es el ejercicio del curso
 
