@@ -51,8 +51,14 @@ const create = (descripcion) => {
   return todo;
 }
 
+const getListing = () => {
+  loadDB();
+  return todoList;
+}
+
 module.exports = {
-  create
+  create,
+  getListing
 }
 
 //Es necesario volver persistente la informacion que se esta almacenando, para que prevalezca aun despues
