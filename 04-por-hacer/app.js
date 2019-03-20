@@ -22,7 +22,9 @@ switch (command) {
     console.log('Lista un elemento por hacer');
     break;
   case 'actualizar':
+    let update = todo.updateListing(argv.descripcion, argv.completado)
     console.log('Actualiza el estado completado de una tarea');
+    console.log(update);
     break;
   default:
     console.log('Comando no reconocido');
