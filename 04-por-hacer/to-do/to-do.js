@@ -78,10 +78,42 @@ const updateListing = (descripcion, completado = true) => {
   }
 }
 
+const deleteTask = (descripcion) => {
+  loadDB();
+  // --- Hecho por mi ---
+  // let index = todoList.findIndex((task) => {
+  //   return task.descripcion === descripcion
+  // })
+  // if (index >= 0){
+  //   todoList.splice(index,1);
+  //   saveDB();
+  //   return true;
+  // }
+  // else {
+  //   return false;
+  // }
+
+  // --- Otra Forma ---
+  let newListing = todoList.filter((task) => {
+    // retorna los elementos que no coinciden con la descripcion ingresada
+    return task.descripcion !== descripcion
+  });
+
+  if(todoList.length === newListing.length){
+    return false;
+  }
+  else {
+    todoList = newListing;  //saveDB solo guarda a todoList
+    saveDB();
+    return true;
+  }
+}
+
 module.exports = {
   create,
   getListing,
-  updateListing
+  updateListing,
+  deleteTask
 }
 
 //Es necesario volver persistente la informacion que se esta almacenando, para que prevalezca aun despues
@@ -89,4 +121,4 @@ module.exports = {
 // JSON.stringify convierte un objeto a un json valido
 // findIndex recibe un callback, y va a hacer un ciclo interno por cada uno de los elementos, y se puede obtener cada uno de los
 // elementos en ese ciclo con la palabra clave establecida 'task (en este caso)'
-//
+// filter es una funcion de los arreglos que permite filtrar o quitar algun elemento y retorna un nuevo arreglo
