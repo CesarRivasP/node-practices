@@ -1,6 +1,6 @@
 ## Aplicación del Cima - Curso de Node
 
-Recuerden ejecutar para las librerias
+Recuerden ejecutar para las librerías
 ```
 npm install
 ```
