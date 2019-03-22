@@ -1,5 +1,7 @@
-const API_KEY = 'df0f7785e148f142e3884db787ee376b';
+const RAPI_API_KEY = '4de39d5102msh47bdb2b925d4401p138b06jsnce33309bc05c';
+const WEATHER_API_KEY = 'df0f7785e148f142e3884db787ee376b';
 
 module.exports = {
-  API_KEY
+  RAPI_API_KEY,
+  WEATHER_API_KEY
 }
