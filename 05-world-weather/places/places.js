@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+const rapiDapikey = require('../constants/constants');
 
 //Esta funcion permite reutilizar el codigo de abajo mas facilmente
 const getPlacesLngLat = async(addr) => {
@@ -16,7 +16,7 @@ const getPlacesLngLat = async(addr) => {
     baseURL: `https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location=${encodedURL}`,
     headers: {
       // key: value
-      'X-RapidAPI-Key': '4de39d5102msh47bdb2b925d4401p138b06jsnce33309bc05c'
+      'X-RapidAPI-Key': rapiDapikey.RAPI_API_KEY
     }
   });
 
