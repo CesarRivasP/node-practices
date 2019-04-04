@@ -3,6 +3,9 @@ const app = express();  //Esto nos permite utilizar express
 
 const hbs = require('hbs');
 
+//Importacion de este archivo de helpers
+require('./hbs/helpers');
+
 // middleware -> use(especificar un callback -> express.static(folder que se quiere servir o que sea publico))
 app.use(express.static(__dirname + '/public'));
 
@@ -32,7 +35,7 @@ app.get('/', (request, response) => {
 });
 
 app.get('/about', (request, response) => {
-  
+
   response.render('about', {
     anio: new Date().getFullYear()  //Para generar un año de forma dinamica
   })
@@ -41,3 +44,6 @@ app.get('/about', (request, response) => {
 app.listen(3000, () => {
   console.log('escuchando peticiones en el puerto 3000');
 });
+
+//Si no existe una variable que corresponda con alguno de los  objetos que se le estan pasando
+//a alguna de las vistas, entonces va a buscar a ver si en los helpers existe algo
