@@ -1,3 +1,7 @@
+//Como es la primera instruccion, cuando se empiece a ejecutar la app va a leer el archivo al inicio
+// y lo va a ejecutar, y alli va a configurar todo lo que el contenga.
+require('./config/config');
+
 const express = require('express');
 const app = express()
 
@@ -48,6 +52,6 @@ app.delete('/user', (request, response) => {
   response.json('deleteUser');
 });
 
-app.listen(3000, () => {
-  console.log(`Èscuchando por el puerto: 3000`);
+app.listen(process.env.PORT, () => {
+  console.log(`Èscuchando por el puerto: ${process.env.PORT}`);
 });
