@@ -8,34 +8,44 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.get('/user', (request, resolve) => {
-  // resolve.send('Hello world');
-  resolve.json('getUser');
+app.get('/user', (request, response) => {
+  // response.send('Hello world');
+  response.json('getUser');
 });
 
-app.post('/user', (request, resolve) => {
-  // resolve.json('postUser');
+app.post('/user', (request, response) => {
+  // response.json('postUser');
 
 // El body es lo que va a aparecer cuando el body Parser procese cualquier payload que reciba en las peticiones
 // funciona para las peticiones post, put, delete
   let body = request.body;
 
-  resolve.json({
-    user: body
-  })
+  if(body.name === undefined){
+    // response.status(400).json();  status 400 y mandar un json vacio
+    response.status(400).json({
+      ok: false,
+      menssage: 'The name is required'
+    });
+  }
+  else {
+    response.json({
+      user: body
+    });
+  }
+
 });
 
-app.put('/user/:id', (request, resolve) => {
+app.put('/user/:id', (request, response) => {
   let id = request.params.id; //para obtener el id que llega desde la url
 
-  // resolve.json('putUser');
-  resolve.json({
+  // response.json('putUser');
+  response.json({
     id
   });
 });
 
-app.delete('/user', (request, resolve) => {
-  resolve.json('deleteUser');
+app.delete('/user', (request, response) => {
+  response.json('deleteUser');
 });
 
 app.listen(3000, () => {
