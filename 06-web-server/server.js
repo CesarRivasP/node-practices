@@ -3,6 +3,9 @@ const app = express();  //Esto nos permite utilizar express
 
 const hbs = require('hbs');
 
+//Enviroment heroku variable
+const port = process.env.PORT || 3000;  //si no existe uno, el otro
+
 //Importacion de este archivo de helpers
 require('./hbs/helpers');
 
@@ -41,8 +44,13 @@ app.get('/about', (request, response) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log('escuchando peticiones en el puerto 3000');
+// app.listen(3000, () => {
+//   console.log('escuchando peticiones en el puerto 3000');
+// });
+
+//With heroku
+app.listen(port, () => {
+  console.log(`escuchando peticiones en el puerto ${port}`);
 });
 
 //Si no existe una variable que corresponda con alguno de los  objetos que se le estan pasando
